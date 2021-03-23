@@ -18,6 +18,9 @@ const Post = db.sequelize.define('registros',{
     },
     quantidade_de_pessoas:{
         type: db.Sequelize.INTEGER
+    },
+    cpf:{
+        type: db.Sequelize.INTEGER
     }
 })
 
