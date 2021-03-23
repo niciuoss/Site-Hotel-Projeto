@@ -1,3 +1,8 @@
+
+const hostname = 'localhost'
+const port = 9999
+const rota = "/Home"
+
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -105,6 +110,7 @@ app.post('/up', function (req, res) {
       
 })
 //==============================|Metodos Post|==============================
-app.listen(9999, () => {
+app.listen(port,hostname,rota, () => {
     console.log("Back-End Executando")
+    console.log("Server Rodando Em http://"+hostname+":"+port+rota)
 })
