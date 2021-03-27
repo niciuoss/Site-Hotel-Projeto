@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        <!-- Template Stylesheet -->
+        <link href="css/fundo.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Registro</title>
 </head>
 
 <body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="login100-more" style="background-image: url('img/14.jpg');"></div>
+
 
     <form action="/add" method="POST">
         <br>
-        <label for="fname">Primeiro Nome:</label>
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+        <label class="label-input100" for="fname">Primeiro Nome:</label>
         <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Segundo Nome:</label>
-        <input type="text" id="sname" name="sname"><br><br>
-
+        <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+        <label class="label-input100" for="lname">Segundo Nome:</label>
+        <input type="text" id="sname" name="sname"><br>
+        <span class="focus-input100"></span>
+        </div>
+        
         <label for="Escolha">Tipo De Pagamento</label><br>
         <input type="radio" id="Cartao" name="opcao" value="Cartao">
         <label for="outro">Cartao</label>
@@ -26,32 +46,43 @@
         <input type="radio" id="Outro" name="opcao" value="Outro">
         <label for="outro">Outro</label><br><br>
         
-        <label for="Escolha">Tipo De Quarto</label>
-
-        <select id="Escolha" name="Escolha">
+        <label for="Escolha">Tipo De Quarto</label><br>
+        
+        <select class="selectClasse" id="Escolha" name="Escolha">
             <option value="QuartoPadrao">Quarto Padrao</option>
             <option value="QuartoFamilia">Quarto Pra Familia</option>
             <option value="QuartoDeLuxo">Quarto De Luxo</option>
             <option value="QuartoSuite">Quarto Suite</option> 
         </select><br><br>
-
-        <label for="dias">Quantos Dias : </label>
+        <div class="wrap-input100 validate-input" data-validate="Dias">
+        <label class="label-input100" for="dias">Quantos Dias : </label>
         <input type="number" id="dias" name="qtdDias" placeholder="ex: 5"><br>
-
-        <label for="qtdPessoas">Quantas Pessoas : </label>
+        <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Pessoas">
+        <label class="label-input100" for="qtdPessoas">Quantas Pessoas : </label>
         <input type="number" id="pessoas" name="qrdPessoas" placeholder="ex: 5"><br>
-         <label for="CPF_User">CPF : </label>
+        <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="CPF">
+        <label class="label-input100" for="CPF_User">CPF : </label>
         <input type="number" id="cpf" name="User_CPF" placeholder="ex: 00000000000"><br>
-
-        <br><button type="submit">Registrar</button>
-        <br>
-        <br>
+        <span class="focus-input100"></span>
+        </div>
+        <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+        <button class="login100-form-btn" style="width:90;height:10" type="submit">Registrar</button>
+            </div>
+        </div>
 
         <!--Apos o registro vamos faze um pequeno calculo 
             pra gerar um valor a ser pago:
             (Tipo De Quarto * Numero De Pessoas) * Quantidade De Dias
         --> 
     
-    </form>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
