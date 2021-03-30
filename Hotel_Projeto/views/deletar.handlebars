@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erro</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/slick/slick.css" rel="stylesheet">
+    <link href="lib/slick/slick-theme.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Deletado</title>
 </head>
 <body>
 
     <br>
-    <center><h4>Registro Removido. </h4></center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <a href='/MeuPerfil'><span style="color:blue !important;">Votar para a página Meu Perfil</span> </a>
+    <form action="/del" method="POST">
+        <br><br><br>
+        <div class="wrap-input100 validate-input" data-validate="CPF">
+        <label class="label-input100" for="CPF_User">CPF : </label>
+        <input type="number" id="cpf" name="User_CPF" placeholder="ex: 00000000000" ><br>
+        <span class="focus-input100"></span>
+        </div>
+        <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <br>
+        <button class="login100-form-btn" style="width:90;height:10" type="submit">Remover</button>
+            </div>
+        </div>
+        <br><br><br> 
+    </form>
 </body>
 </html>

@@ -9,9 +9,7 @@ const bodyParser = require('body-parser')
 const Post = require('./Models/Post')
 const path = require('path')
 const handlebars = require('express-handlebars')
-const {
-    sequelize
-} = require('./Models/db')
+const {sequelize} = require('./Models/db')
 
 //Config
 //Template Engine
@@ -46,9 +44,9 @@ app.get("/Registro", function (req, res) {
     //res.sendFile(__dirname+"/paginas/Registro.html")
     res.render('Registro')
 })
-app.get("/MeuPerfil", function (req, res) {
+app.get("/RegistrosDoHotel", function (req, res) {
     Post.findAll().then(function (posts) {
-        res.render('MeuPerfil', {
+        res.render('RegistrosDoHotel', {
             posts: posts
         })
     })
@@ -77,19 +75,14 @@ app.post('/add', function (req, res) {
         res.render('Erro')
     })
 })
+//==============================|Deletar|==============================
+app.get('/deletar', function (req, res) {
+    res.render('deletar')
+})
 
-app.get('/deletar/:id', function (req, res) {
-    //Remover Do Banco De Dados   
-    Post.destroy({
-        where: {
-            'id': req.params.id
-        }
-    }).then(function () {
-        res.render('deletar')
-        //res.send("Registro Removido <a href = /MeuPerfil >Voltar Pro Perfil</a>")
-    }).catch(function (erro) {
-        res.send("Esse registro noa existe <a href = /MeuPerfil >Voltar Pro Perfil</a>")
-    })
+app.post('/del', function(req,res){
+    sequelize.query("DELETE FROM registros WHERE cpf = "+req.body.User_CPF)
+    res.render('Confirmacao')
 })
 
 app.get('/update', function (req, res) {
@@ -106,7 +99,7 @@ app.post('/up', function (req, res) {
     " quantidade_de_pessoas = " + req.body.qrdPessoas +
       
     " WHERE cpf = "+ req.body.User_CPF)
-    res.render('MeuPerfil')
+    res.render('Confirmacao')
       
 })
 //==============================|Metodos Post|==============================
